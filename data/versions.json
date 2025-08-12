@@ -1,4 +1,4 @@
-export const traeDownloadData = {
+{
   "lastUpdate": "2025-08-12T07:43:59.193Z",
   "versions": [
     {
@@ -92,30 +92,4 @@ export const traeDownloadData = {
       "logId": "20250812154133B913DFDC82F732D0374C"
     }
   ]
-};
-
-export type DownloadLink = {
-  region: string;
-  x64?: string;
-  apple?: string;
-  intel?: string;
-};
-
-export type PlatformVersion = {
-  version: string;
-  uploadDate: number;
-  uploadDateFormatted: string;
-  downloads: DownloadLink[];
-};
-
-export type VersionEntry = {
-  timestamp: string;
-  win32?: PlatformVersion;
-  darwin?: PlatformVersion;
-  logId: string;
-};
-
-export type TraeData = {
-  lastUpdate: string;
-  versions: VersionEntry[];
-};
+}
