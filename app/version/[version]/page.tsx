@@ -5,25 +5,36 @@ import { DownloadCard } from "@/components/download-card"
 import { traeDownloadData } from "@/lib/data"
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronLeft, Calendar, Package, Download as DownloadIcon } from 'lucide-react'
+import { ChevronLeft, Calendar, Package } from 'lucide-react'
 
 interface VersionPageProps {
   params: {
-    id: string
+    version: string
   }
 }
 
 // Generate static paths for all versions
 export async function generateStaticParams() {
-  return traeDownloadData.versions.map((version, index) => ({
-    id: index.toString()
+  const versions = new Set<string>()
+  
+  traeDownloadData.versions.forEach(version => {
+    if (version.win32?.version) versions.add(version.win32.version)
+    if (version.darwin?.version) versions.add(version.darwin.version)
+  })
+  
+  return Array.from(versions).map(version => ({
+    version: version
   }))
 }
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: VersionPageProps): Promise<Metadata> {
-  const versionIndex = parseInt(params.id)
-  const version = traeDownloadData.versions[versionIndex]
+  const requestedVersion = params.version
+  
+  // Find the version data
+  const version = traeDownloadData.versions.find(v => 
+    v.win32?.version === requestedVersion || v.darwin?.version === requestedVersion
+  )
   
   if (!version) {
     return {
@@ -34,35 +45,45 @@ export async function generateMetadata({ params }: VersionPageProps): Promise<Me
 
   const releaseDate = new Date(version.timestamp).toLocaleDateString()
   const winVersion = version.win32?.version || 'N/A'
-  const macVersion = version.darwin?.version || 'N/A'
 
   return {
-    title: `TRAE v${winVersion} 历史版本下载 - Trae AI, Trae Idea, Trae 2.0, Trae Solo`,
-    description: `TRAE v${winVersion} 历史版本下载，发布于${releaseDate}。下载TRAE历史版本，体验Trae AI, Trae Idea, Trae 2.0, Trae Solo功能，支持Windows和macOS系统。`,
+    title: `TRAE v${requestedVersion} 历史版本下载 - Trae AI, Trae Idea, Trae 2.0, Trae Solo`,
+    description: `TRAE v${requestedVersion} 历史版本下载，发布于${releaseDate}。下载TRAE历史版本，体验Trae AI, Trae Idea, Trae 2.0, Trae Solo功能，支持Windows和macOS系统。`,
     keywords: 'TRAE,trae ai,trae idea,trae 2.0,trae solo,trae国际版,trae 历史版本,trae下载,trae历史版本下载,AI programming,version download,release notes,programming assistant',
     openGraph: {
-      title: `TRAE v${winVersion} 历史版本下载 - AI Programming Assistant`,
-      description: `TRAE v${winVersion} 历史版本下载，增强的Trae AI, Trae Idea, Trae 2.0, Trae Solo功能。`,
+      title: `TRAE v${requestedVersion} 历史版本下载 - AI Programming Assistant`,
+      description: `TRAE v${requestedVersion} 历史版本下载，增强的Trae AI, Trae Idea, Trae 2.0, Trae Solo功能。`,
       type: 'website'
     },
     twitter: {
       card: 'summary',
-      title: `TRAE v${winVersion} 历史版本下载 - AI Programming Assistant`,
-      description: `TRAE v${winVersion} 历史版本下载，增强的Trae AI, Trae Idea, Trae 2.0, Trae Solo功能。`
+      title: `TRAE v${requestedVersion} 历史版本下载 - AI Programming Assistant`,
+      description: `TRAE v${requestedVersion} 历史版本下载，增强的Trae AI, Trae Idea, Trae 2.0, Trae Solo功能。`
     }
   }
 }
 
 export default function VersionPage({ params }: VersionPageProps) {
-  const versionIndex = parseInt(params.id)
-  const version = traeDownloadData.versions[versionIndex]
+  const requestedVersion = params.version
+  
+  // Find the version data
+  const version = traeDownloadData.versions.find(v => 
+    v.win32?.version === requestedVersion || v.darwin?.version === requestedVersion
+  )
+  
+  const versionIndex = traeDownloadData.versions.findIndex(v => 
+    v.win32?.version === requestedVersion || v.darwin?.version === requestedVersion
+  )
 
-  if (!version || versionIndex < 0 || versionIndex >= traeDownloadData.versions.length) {
+  if (!version) {
     notFound()
   }
 
   const releaseDate = new Date(version.timestamp)
   const isLatest = versionIndex === 0
+  const sortedVersions = [...traeDownloadData.versions].sort((a, b) => 
+    new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+  )
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
@@ -87,7 +108,7 @@ export default function VersionPage({ params }: VersionPageProps) {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              TRAE Version Details
+              TRAE Version {requestedVersion}
               {isLatest && <span className="text-primary ml-4">[Latest]</span>}
             </h1>
             
@@ -129,54 +150,6 @@ export default function VersionPage({ params }: VersionPageProps) {
             </div>
           </div>
 
-          {/* Features Section */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-center mb-8">TRAE AI Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-gray-900 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Trae AI</h3>
-                <p className="text-muted-foreground">
-                  Advanced AI-powered code generation and intelligent programming assistance for enhanced productivity.
-                </p>
-              </div>
-              
-              <div className="bg-gray-900 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Trae Idea</h3>
-                <p className="text-muted-foreground">
-                  Creative programming solutions with innovative AI suggestions for complex development challenges.
-                </p>
-              </div>
-              
-              <div className="bg-gray-900 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Trae 2.0</h3>
-                <p className="text-muted-foreground">
-                  Next-generation AI collaboration experience with enhanced performance and new capabilities.
-                </p>
-              </div>
-              
-              <div className="bg-gray-900 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Trae Solo</h3>
-                <p className="text-muted-foreground">
-                  Optimized for individual developers with personalized AI assistance and workflow integration.
-                </p>
-              </div>
-              
-              <div className="bg-gray-900 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Trae International</h3>
-                <p className="text-muted-foreground">
-                  Global version with multi-language support and international development tools.
-                </p>
-              </div>
-              
-              <div className="bg-gray-900 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Smart Integration</h3>
-                <p className="text-muted-foreground">
-                  Seamless integration with popular development environments and version control systems.
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Download Section */}
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-center mb-8">Download This Version</h2>
@@ -189,9 +162,9 @@ export default function VersionPage({ params }: VersionPageProps) {
 
           {/* Version Navigation */}
           <div className="flex justify-between items-center border-t border-gray-800 pt-8">
-            {versionIndex < traeDownloadData.versions.length - 1 ? (
+            {versionIndex < sortedVersions.length - 1 ? (
               <Link
-                href={`/version/${versionIndex + 1}`}
+                href={`/version/${sortedVersions[versionIndex + 1].win32?.version || sortedVersions[versionIndex + 1].darwin?.version}`}
                 className="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
               >
                 <ChevronLeft className="mr-2 h-4 w-4" />
@@ -203,7 +176,7 @@ export default function VersionPage({ params }: VersionPageProps) {
             
             {versionIndex > 0 && (
               <Link
-                href={`/version/${versionIndex - 1}`}
+                href={`/version/${sortedVersions[versionIndex - 1].win32?.version || sortedVersions[versionIndex - 1].darwin?.version}`}
                 className="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
               >
                 Newer Version

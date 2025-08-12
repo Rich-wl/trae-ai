@@ -3,7 +3,6 @@ import { Footer } from "@/components/footer"
 import { DownloadCard } from "@/components/download-card"
 import { traeDownloadData } from "@/lib/data"
 import Link from "next/link"
-import { Eye } from "lucide-react"
 
 export default function DownloadPage() {
 // Sort versions by timestamp in descending order (newest first)
@@ -42,21 +41,16 @@ return (
         {sortedVersions.map((version, index) => (
           <div key={version.logId} className="space-y-6">
             <div className="text-center">
-              <h2 className="text-2xl font-semibold mb-2">
-                {index === 0 && <span className="text-primary mr-2">[Latest]</span>}
-                Version Release - {new Date(version.timestamp).toLocaleDateString()}
-              </h2>
+              <Link href={`/version/${version.win32?.version || version.darwin?.version || index}`}>
+                <h2 className="text-2xl font-semibold mb-2 hover:text-primary transition-colors cursor-pointer">
+                  {index === 0 && <span className="text-primary mr-2">[Latest]</span>}
+                  Version Release - {new Date(version.timestamp).toLocaleDateString()}
+                </h2>
+              </Link>
               <p className="text-sm text-muted-foreground mb-4">
                 Windows: {version.win32?.version || 'N/A'} | 
                 macOS: {version.darwin?.version || 'N/A'}
               </p>
-              <Link
-                href={`/version/${index}`}
-                className="inline-flex items-center px-4 py-2 bg-primary text-black hover:bg-primary/90 rounded-lg transition-colors font-medium"
-              >
-                <Eye className="mr-2 h-4 w-4" />
-                View Version Details
-              </Link>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
