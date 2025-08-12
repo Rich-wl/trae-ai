@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="bg-black text-white py-12 px-4 md:px-6 border-t border-gray-800">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="flex flex-col gap-4">
-          <Link href="#" className="flex items-center gap-2 text-lg font-semibold">
+          <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
             <span className="text-primary text-2xl font-bold">TRAE</span>
             <span className="sr-only">TRAE Home</span>
           </Link>
@@ -23,10 +23,10 @@ export function Footer() {
         </div>
         <div className="grid gap-2">
           <h3 className="font-semibold text-lg">Resources</h3>
-          <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+          <Link href="/docs" className="text-muted-foreground hover:text-primary text-sm">
             Docs
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+          <Link href="/blog" className="text-muted-foreground hover:text-primary text-sm">
             Blog
           </Link>
         </div>

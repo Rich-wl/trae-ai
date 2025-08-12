@@ -16,10 +16,10 @@ return (
         <Link href="/pricing" className="text-white hover:text-primary">
           Pricing
         </Link>
-        <Link href="#" className="text-white hover:text-primary">
+        <Link href="/blog" className="text-white hover:text-primary">
           Blog
         </Link>
-        <Link href="#" className="text-white hover:text-primary">
+        <Link href="/docs" className="text-white hover:text-primary">
           Docs
         </Link>
         <Link href="/about" className="text-white hover:text-primary">
