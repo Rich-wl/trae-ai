@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-title: 'TRAE历史版本下载 - AI Programming Assistant | Trae AI, Trae Idea, Trae 2.0, Trae Solo',
+title: 'TRAE - Collaborate with Intelligence',
 description: 'TRAE历史版本下载中心，提供所有TRAE下载版本。体验最新的AI编程工具：Trae AI, Trae Idea, Trae 2.0, Trae Solo和Trae国际版，支持智能代码生成和AI协作开发。',
 keywords: 'TRAE,trae ai,trae idea,trae 2.0,trae solo,trae国际版,trae 历史版本,trae下载,trae历史版本下载,AI programming,intelligent code,AI development tool,code generation,programming assistant',
 openGraph: {
