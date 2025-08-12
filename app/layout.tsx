@@ -1,6 +1,6 @@
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
+import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ return (
     <head>
       <link rel="preconnect" href="https://lf-cdn.trae.ai/" crossOrigin="anonymous" />
       <link rel="dns-prefetch" href="https://lf-cdn.trae.ai/" />
-      <link rel="icon" href="https://lf-cdn.trae.ai/obj/trae-ai-sg/trae_website_prod/favicon.png" />
+      <link rel="icon" href="/favicon.ico" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta name="renderer" content="webkit" />
       <meta name="layoutmode" content="standard" />
@@ -40,8 +40,7 @@ return (
       <link rel="alternate" href="https://trae.ai/rss.xml" type="application/rss+xml" title="Trae Blog | RSS Feed" />
       <link rel="alternate" href="https://trae.ai/atom.xml" type="application/rss+xml" title="Trae Blog | RSS Feed" />
       <link rel="alternate" href="https://trae.ai/rss.json" type="application/json" title="Trae Blog | RSS Feed" />
-      <link rel="alternate" href="https://www.trae.ai" hrefLang="en" />
-      <link rel="alternate" href="https://www.trae.ai/ja" hrefLang="ja" />
+
       <style>{`
 html {
 font-family: ${GeistSans.style.fontFamily};
