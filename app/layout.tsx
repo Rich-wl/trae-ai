@@ -40,6 +40,16 @@ return (
       <link rel="alternate" href="https://trae.ai/atom.xml" type="application/rss+xml" title="Trae Blog | RSS Feed" />
       <link rel="alternate" href="https://trae.ai/rss.json" type="application/json" title="Trae Blog | RSS Feed" />
 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0WF4ENWBS"></script>
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Q0WF4ENWBS');
+        `
+      }} />
+
       <style>{`
 html {
 font-family: ${GeistSans.style.fontFamily};
