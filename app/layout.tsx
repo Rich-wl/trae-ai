@@ -49,6 +49,7 @@ return (
           gtag('config', 'G-Q0WF4ENWBS');
         `
       }} />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4633597437741439" crossOrigin="anonymous"></script>
 
       <style>{`
 html {
