@@ -13,7 +13,7 @@ const sortedVersions = [...traeDownloadData.versions].sort((a, b) =>
 return (
   <div className="flex flex-col min-h-screen bg-black text-white">
     <Header />
-    <main className="flex-1 flex flex-col items-center py-12 px-4 md:px-6">
+    <main className="flex-1 flex flex-col items-center pt-28 pb-12 px-4 md:px-6">
       <div className="text-center mb-12">
         <div className="mb-4">
           <svg
