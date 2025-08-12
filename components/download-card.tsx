@@ -1,7 +1,6 @@
 import { Apple, Download, LaptopIcon as Linux, ComputerIcon as Windows, ChevronDown } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import {
 DropdownMenu,
 DropdownMenuContent,
@@ -49,9 +48,8 @@ return (
     </CardHeader>
     <CardContent className="flex flex-col items-center gap-4 w-full p-0">
       {isComingSoon ? (
-        <div className="flex flex-col gap-2 w-full">
-          <Input type="email" placeholder="Enter your email" className="bg-gray-800 border-gray-700 text-white" />
-          <Button className="w-full bg-primary text-black hover:bg-primary/90">Join waitlist</Button>
+        <div className="text-center">
+          <p className="text-lg font-medium text-muted-foreground">Coming Soon</p>
         </div>
       ) : (
         <>
@@ -66,14 +64,14 @@ return (
               <DropdownMenuContent align="center" className="bg-gray-800 text-white border-gray-700">
                 {getDownloadLink(versionInfo.downloads, "apple") && (
                   <DropdownMenuItem asChild className="hover:bg-gray-700">
-                    <a href={getDownloadLink(versionInfo.downloads, "apple")} download>
+                    <a href={getDownloadLink(versionInfo.downloads, "apple") || undefined} download>
                       Download .dmg (Apple Silicon)
                     </a>
                   </DropdownMenuItem>
                 )}
                 {getDownloadLink(versionInfo.downloads, "intel") && (
                   <DropdownMenuItem asChild className="hover:bg-gray-700">
-                    <a href={getDownloadLink(versionInfo.downloads, "intel")} download>
+                    <a href={getDownloadLink(versionInfo.downloads, "intel") || undefined} download>
                       Download .dmg (Intel)
                     </a>
                   </DropdownMenuItem>
@@ -83,7 +81,7 @@ return (
           )}
           {os === "windows" && versionInfo?.downloads && (
             <Button asChild className="w-full bg-primary text-black hover:bg-primary/90">
-              <a href={getDownloadLink(versionInfo.downloads, "x64")} download>
+              <a href={getDownloadLink(versionInfo.downloads, "x64") || undefined} download>
                 <Download className="mr-2 h-4 w-4" />
                 Download for Windows (x64)
               </a>

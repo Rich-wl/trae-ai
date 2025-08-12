@@ -2,14 +2,19 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { DownloadCard } from "@/components/download-card"
 import { traeDownloadData } from "@/lib/data"
+import Link from "next/link"
+import { Eye } from "lucide-react"
 
 export default function DownloadPage() {
-const latestVersion = traeDownloadData.versions[0] // Assuming the first entry is the latest
+// Sort versions by timestamp in descending order (newest first)
+const sortedVersions = [...traeDownloadData.versions].sort((a, b) => 
+  new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+)
 
 return (
   <div className="flex flex-col min-h-screen bg-black text-white">
     <Header />
-    <main className="flex-1 flex flex-col items-center justify-center py-12 px-4 md:px-6">
+    <main className="flex-1 flex flex-col items-center py-12 px-4 md:px-6">
       <div className="text-center mb-12">
         <div className="mb-4">
           <svg
@@ -33,10 +38,34 @@ return (
         <p className="text-lg text-muted-foreground">Download TRAE for your desired operating system.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
-        <DownloadCard os="mac" versionInfo={latestVersion.darwin} />
-        <DownloadCard os="windows" versionInfo={latestVersion.win32} />
-        <DownloadCard os="linux" isComingSoon />
+      <div className="w-full max-w-7xl space-y-12">
+        {sortedVersions.map((version, index) => (
+          <div key={version.logId} className="space-y-6">
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold mb-2">
+                {index === 0 && <span className="text-primary mr-2">[Latest]</span>}
+                Version Release - {new Date(version.timestamp).toLocaleDateString()}
+              </h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                Windows: {version.win32?.version || 'N/A'} | 
+                macOS: {version.darwin?.version || 'N/A'}
+              </p>
+              <Link
+                href={`/version/${index}`}
+                className="inline-flex items-center px-4 py-2 bg-primary text-black hover:bg-primary/90 rounded-lg transition-colors font-medium"
+              >
+                <Eye className="mr-2 h-4 w-4" />
+                View Version Details
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <DownloadCard os="mac" versionInfo={version.darwin} />
+              <DownloadCard os="windows" versionInfo={version.win32} />
+              <DownloadCard os="linux" isComingSoon />
+            </div>
+          </div>
+        ))}
       </div>
     </main>
     <Footer />

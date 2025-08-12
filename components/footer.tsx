@@ -19,9 +19,7 @@ export function Footer() {
           <Link href="/privacy-policy" className="text-muted-foreground hover:text-primary text-sm">
             Privacy Policy
           </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
-            Cookie Policy
-          </Link>
+        
         </div>
         <div className="grid gap-2">
           <h3 className="font-semibold text-lg">Resources</h3>
@@ -32,21 +30,7 @@ export function Footer() {
             Blog
           </Link>
         </div>
-        <div className="grid gap-2">
-          <h3 className="font-semibold text-lg">Connect</h3>
-          <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
-            Feedback
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
-            Discord
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
-            Reddit
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
-            Partnerships
-          </Link>
-        </div>
+   
       </div>
     </footer>
   )

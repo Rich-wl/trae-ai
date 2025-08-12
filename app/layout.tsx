@@ -4,18 +4,18 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-title: 'Download | TRAE - Collaborate with Intelligence',
-description: 'Download TRAE for your desired operating system.',
-keywords: 'TRAE,Builder,AI,IDE,automatic,collaboration,Multimodality,efficiency,Fast,Accurate,Precise,Context,free,Deploy, editor,code,coding,Autocomplete',
+title: 'TRAE历史版本下载 - AI Programming Assistant | Trae AI, Trae Idea, Trae 2.0, Trae Solo',
+description: 'TRAE历史版本下载中心，提供所有TRAE下载版本。体验最新的AI编程工具：Trae AI, Trae Idea, Trae 2.0, Trae Solo和Trae国际版，支持智能代码生成和AI协作开发。',
+keywords: 'TRAE,trae ai,trae idea,trae 2.0,trae solo,trae国际版,trae 历史版本,trae下载,trae历史版本下载,AI programming,intelligent code,AI development tool,code generation,programming assistant',
 openGraph: {
   type: 'website',
-  title: 'Download | TRAE - Collaborate with Intelligence',
-  description: 'Download TRAE for your desired operating system.',
+  title: 'TRAE历史版本下载 - AI Programming Assistant | Trae AI, Trae Idea, Trae 2.0, Trae Solo',
+  description: 'TRAE历史版本下载中心，提供所有TRAE下载版本。体验最新的AI编程工具：Trae AI, Trae Idea, Trae 2.0, Trae Solo和Trae国际版。',
 },
 twitter: {
   card: 'summary',
-  title: 'Download | TRAE - Collaborate with Intelligence',
-  description: 'Download TRAE for your desired operating system.',
+  title: 'TRAE历史版本下载 - AI Programming Assistant | Trae AI, Trae Idea, Trae 2.0, Trae Solo',
+  description: 'TRAE历史版本下载中心，提供所有TRAE下载版本。体验最新的AI编程工具：Trae AI, Trae Idea, Trae 2.0, Trae Solo和Trae国际版。',
 },
     generator: 'v0.dev'
 }
