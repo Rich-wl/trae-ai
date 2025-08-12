@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://trae.ai/sitemap.xml
+Sitemap: https://traehistory.com/sitemap.xml
 
 # Disallow crawling of admin/private areas
 User-agent: *
