@@ -16,8 +16,7 @@ twitter: {
   card: 'summary',
   title: 'TRAE历史版本下载 - AI Programming Assistant | Trae AI, Trae Idea, Trae 2.0, Trae Solo',
   description: 'TRAE历史版本下载中心，提供所有TRAE下载版本。体验最新的AI编程工具：Trae AI, Trae Idea, Trae 2.0, Trae Solo和Trae国际版。',
-},
-    generator: 'v0.dev'
+}
 }
 
 export default function RootLayout({
