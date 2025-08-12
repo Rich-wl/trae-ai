@@ -6,10 +6,10 @@ export function Footer() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
-            <span className="text-primary text-2xl font-bold">TRAE</span>
-            <span className="sr-only">TRAE Home</span>
+            <span className="text-primary text-2xl font-bold">TRAE HISTORY</span>
+            <span className="sr-only">TRAE HISTORY Home</span>
           </Link>
-          <p className="text-sm text-muted-foreground">© 2025 TRAE Inc. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2025 TRAE HISTORY Inc. All rights reserved.</p>
         </div>
         <div className="grid gap-2">
           <h3 className="font-semibold text-lg">Terms</h3>

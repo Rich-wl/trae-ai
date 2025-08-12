@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 
 interface PricingCardProps {
@@ -61,19 +60,15 @@ function PricingCard({
 
 export function PricingCards() {
   const freeFeatures = [
-    "Basic AI assistance",
-    "Limited requests per month",
-    "Standard support",
-    "Access to core features"
+    "10 Fast requests and 50 Slow requests of Premium models / month",
+    "1000 Slow Requests of Advanced models / month",
+    "5000 Autocomplete / month"
   ]
 
   const proFeatures = [
-    "Unlimited AI requests",
-    "Priority support",
-    "Advanced features",
-    "API access",
-    "Custom integrations",
-    "Team collaboration tools"
+    "600 Fast requests and unlimited Slow requests of Premium models / month",
+    "Unlimited Requests of Advanced models",
+    "Unlimited Autocomplete"
   ]
 
   return (
