@@ -47,7 +47,8 @@ jobs:
         key: ${{ secrets.VPS_KEY }}
         port: ${{ secrets.VPS_PORT }}
         script: |
+          source ~/.bashrc
           cd /var/www/website/trae
-          pnpm install --production
-          pm2 restart trae-ai || PORT=3007 pm2 start pnpm --name "trae-ai" -- start
-          pm2 save
+          ~/.local/share/pnpm/pnpm install --production || pnpm install --production
+          ~/.npm-global/bin/pm2 restart trae-ai || PORT=3007 ~/.npm-global/bin/pm2 start pnpm --name "trae-ai" -- start || PORT=3007 pm2 start pnpm --name "trae-ai" -- start
+          ~/.npm-global/bin/pm2 save || pm2 save
