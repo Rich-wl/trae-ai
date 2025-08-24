@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2025-08-22T11:15:48.792Z",
+  "lastUpdate": "2025-08-24T04:25:21.197Z",
   "versions": [
     {
       "timestamp": "2025-08-07T03:38:54.423Z",
@@ -180,6 +180,51 @@
         ]
       },
       "logId": "2025082219154871E10B3263588F176DF3"
+    },
+    {
+      "timestamp": "2025-08-24T04:25:21.197Z",
+      "win32": {
+        "version": "1.0.18305",
+        "uploadDate": 1755952483609,
+        "uploadDateFormatted": "2025-08-23T12:34:43.609Z",
+        "downloads": [
+          {
+            "region": "cn",
+            "x64": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/1.0.18305/win32/Trae-Setup-x64.exe"
+          },
+          {
+            "region": "sg",
+            "x64": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/1.0.18305/win32/Trae-Setup-x64.exe"
+          },
+          {
+            "region": "va",
+            "x64": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/1.0.18305/win32/Trae-Setup-x64.exe"
+          }
+        ]
+      },
+      "darwin": {
+        "version": "1.0.18306",
+        "uploadDate": 1755951943275,
+        "uploadDateFormatted": "2025-08-23T12:25:43.275Z",
+        "downloads": [
+          {
+            "apple": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/1.0.18306/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/1.0.18306/darwin/Trae-darwin-x64.dmg",
+            "region": "cn"
+          },
+          {
+            "apple": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/1.0.18306/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/1.0.18306/darwin/Trae-darwin-x64.dmg",
+            "region": "sg"
+          },
+          {
+            "apple": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/1.0.18306/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/1.0.18306/darwin/Trae-darwin-x64.dmg",
+            "region": "va"
+          }
+        ]
+      },
+      "logId": "202508241225208DAC0C3B506F748DCFAA"
     }
   ]
 }
