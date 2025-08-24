@@ -49,5 +49,5 @@ jobs:
         script: |
           cd /var/www/website/trae
           pnpm install --production
-          pm2 restart trae-ai || PORT=3007 pm2 start npm --name "trae-ai" -- start
+          pm2 restart trae-ai || PORT=3007 pm2 start pnpm --name "trae-ai" -- start
           pm2 save
