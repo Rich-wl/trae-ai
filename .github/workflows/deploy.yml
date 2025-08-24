@@ -48,8 +48,10 @@ jobs:
           key: ${{ secrets.VPS_KEY }}
           port: ${{ secrets.VPS_PORT }}
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             source ~/.bashrc
             cd /var/www/website/trae
-            ~/.local/share/pnpm/pnpm install --production || pnpm install --production
-            ~/.npm-global/bin/pm2 restart trae || PORT=3007 ~/.npm-global/bin/pm2 start pnpm --name "trae" -- start || PORT=3007 pm2 start pnpm --name "trae" -- start
-            ~/.npm-global/bin/pm2 save || pm2 save
+            pnpm install --production
+            pm2 restart trae || PORT=3007 pm2 start pnpm --name "trae" -- start
+            pm2 save
