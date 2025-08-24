@@ -33,7 +33,7 @@ export default function DownloadPage() {
               <path d="M17 5L22 10" />
             </svg>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Download TRAE1</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Download TRAE</h1>
           <p className="text-lg text-muted-foreground">Download TRAE for your desired operating system.</p>
         </div>
 
