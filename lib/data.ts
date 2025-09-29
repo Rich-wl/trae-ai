@@ -1,5 +1,5 @@
 export const traeDownloadData = {
-  "lastUpdate": "2025-09-26T16:23:17.680Z",
+  "lastUpdate": "2025-09-29T14:19:20.260Z",
   "versions": [
     {
       "timestamp": "2025-08-07T03:38:54.423Z",
@@ -630,6 +630,51 @@ export const traeDownloadData = {
         ]
       },
       "logId": "202509270023170E15408FBF88D00AD9E4"
+    },
+    {
+      "timestamp": "2025-09-29T14:19:20.260Z",
+      "win32": {
+        "version": "1.0.20918",
+        "uploadDate": 1759066760407,
+        "uploadDateFormatted": "2025-09-28T13:39:20.407Z",
+        "downloads": [
+          {
+            "region": "cn",
+            "x64": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/1.0.20918/win32/Trae-Setup-x64.exe"
+          },
+          {
+            "region": "sg",
+            "x64": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/1.0.20918/win32/Trae-Setup-x64.exe"
+          },
+          {
+            "region": "va",
+            "x64": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/1.0.20918/win32/Trae-Setup-x64.exe"
+          }
+        ]
+      },
+      "darwin": {
+        "version": "1.0.20917",
+        "uploadDate": 1759067168163,
+        "uploadDateFormatted": "2025-09-28T13:46:08.163Z",
+        "downloads": [
+          {
+            "apple": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/1.0.20917/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/1.0.20917/darwin/Trae-darwin-x64.dmg",
+            "region": "cn"
+          },
+          {
+            "apple": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/1.0.20917/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/1.0.20917/darwin/Trae-darwin-x64.dmg",
+            "region": "sg"
+          },
+          {
+            "apple": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/1.0.20917/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/1.0.20917/darwin/Trae-darwin-x64.dmg",
+            "region": "va"
+          }
+        ]
+      },
+      "logId": "20250929221919C5E88956B5F776C6704C"
     }
   ]
 };
