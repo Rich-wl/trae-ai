@@ -1,5 +1,5 @@
 export const traeDownloadData = {
-  "lastUpdate": "2026-02-11T05:02:54.031Z",
+  "lastUpdate": "2026-02-14T10:27:13.634Z",
   "versions": [
     {
       "timestamp": "2025-08-07T03:38:54.423Z",
@@ -2364,6 +2364,60 @@ export const traeDownloadData = {
         ]
       },
       "logId": "20260211130252CCDA9D3445D0C910C027"
+    },
+    {
+      "timestamp": "2026-02-14T10:27:13.630Z",
+      "win32": {
+        "version": "2.3.10208",
+        "uploadDate": 1771008677480,
+        "uploadDateFormatted": "2026-02-13T18:51:17.480Z",
+        "downloads": [
+          {
+            "region": "cn",
+            "x64": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.10208/win32/Trae-Setup-x64.exe"
+          },
+          {
+            "region": "sg",
+            "x64": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/2.3.10208/win32/Trae-Setup-x64.exe"
+          },
+          {
+            "region": "va",
+            "x64": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/2.3.10208/win32/Trae-Setup-x64.exe"
+          },
+          {
+            "region": "usttp",
+            "x64": "https://lf-static.traecdn.us/obj/trae-ai-tx/pkg/app/releases/stable/2.3.10208/win32/Trae-Setup-x64.exe"
+          }
+        ]
+      },
+      "darwin": {
+        "version": "2.3.10208",
+        "uploadDate": 1771009226544,
+        "uploadDateFormatted": "2026-02-13T19:00:26.544Z",
+        "downloads": [
+          {
+            "apple": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.10208/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/2.3.10208/darwin/Trae-darwin-x64.dmg",
+            "region": "cn"
+          },
+          {
+            "apple": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/2.3.10208/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.ai/obj/trae-ai-sg/pkg/app/releases/stable/2.3.10208/darwin/Trae-darwin-x64.dmg",
+            "region": "sg"
+          },
+          {
+            "apple": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/2.3.10208/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-cdn.trae.ai/obj/trae-ai-us/pkg/app/releases/stable/2.3.10208/darwin/Trae-darwin-x64.dmg",
+            "region": "va"
+          },
+          {
+            "apple": "https://lf-static.traecdn.us/obj/trae-ai-tx/pkg/app/releases/stable/2.3.10208/darwin/Trae-darwin-arm64.dmg",
+            "intel": "https://lf-static.traecdn.us/obj/trae-ai-tx/pkg/app/releases/stable/2.3.10208/darwin/Trae-darwin-x64.dmg",
+            "region": "usttp"
+          }
+        ]
+      },
+      "logId": "202602141827131520AA980B97B2546F3A"
     }
   ]
 };
